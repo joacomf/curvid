@@ -1,5 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <GraficoHistorico/>
 </template>
+
+<script>
+import GraficoHistorico from '@/components/GraficoHistorico.vue'
+
+export default {
+  components: {
+    GraficoHistorico
+  }
+}
+</script>
