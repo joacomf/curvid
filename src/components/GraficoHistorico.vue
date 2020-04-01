@@ -1,7 +1,6 @@
 <template>
   <div class="small">
     <line-chart :chart-data="datacollection"></line-chart>
-    <button @click="fillData()">Randomize</button>
   </div>
 </template>
 
@@ -105,7 +104,7 @@ export default {
 
 <style>
 .small {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 </style>
