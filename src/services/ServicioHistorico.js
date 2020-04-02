@@ -7,14 +7,14 @@ export default {
   cantidadDeRecuperadosPorDia: [],
   cantidadDeDiferenciaRecuperados: [],
 
-  diaInicial: 43,
+  diaInicial: 0,
 
   url: 'https://corona.lmao.ninja/v2/historical/',
   pais: 'Argentina',
 
-  obtenerDatos () {
+  obtenerDatos (pais) {
     console.log(axios);
-    return axios.get(this.url + this.pais).then(historico => {
+    return axios.get(this.url + pais).then(historico => {
       const lineaDeTiempo = historico.data.timeline
 
       const casosTotalesPorDia = lineaDeTiempo.cases

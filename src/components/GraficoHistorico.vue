@@ -1,29 +1,42 @@
 <template>
   <div class="small">
-    <line-chart :chart-data="datacollection"></line-chart>
+    <h1>{{pais}}</h1>
+    <cargando v-if="cargando"/>
+    <line-chart :chart-data="datacollection" :options="options"></line-chart>
   </div>
 </template>
 
 <script>
 import LineChart from './LineChart.js'
+import Cargando from './Cargando.vue'
 import ServicioHistorico from '@/services/ServicioHistorico.js'
 
 export default {
   name: 'GraficoHistorico',
   components: {
-    LineChart
+    LineChart,
+    Cargando
   },
+  props: ["pais"],
   data () {
     return {
       datacollection: {},
-      historico: null
+      pais: '',
+      options: {
+        maintainAspectRatio: false,
+        responsive: true
+      },
+      historico: null,
+      cargando: true
     }
   },
   mounted () {
+    this.cargando = true;
     this.historico = ServicioHistorico;
-    this.historico.obtenerDatos().then(() => {
+    this.historico.obtenerDatos(this.pais).then(() => {
       this.fillData()
-    });
+    })
+    .finally(() => this.cargando = false);
   },
   methods: {
     fillData () {
@@ -33,28 +46,28 @@ export default {
         datasets: [
           {
             label: 'Muertes',
-            backgroundColor: '#251515',
+            backgroundColor: '#25151599',
             borderColor: '#251515',
             fill: true,
             data: this.historico.cantidadDeMuertesPorDia
           },
           {
             label: 'Recuperados',
-            backgroundColor: '#a7f578',
+            backgroundColor: '#a7f57899',
             borderColor: '#a7f578',
             fill: true,
             data: this.historico.cantidadDeRecuperadosPorDia
           },
           {
             label: 'Casos Activos',
-            backgroundColor: '#cc7979',
+            backgroundColor: '#cc797999',
             borderColor: '#cc7979',
             fill: true,
             data: this.historico.cantidadDeDiferenciaRecuperados
           },
           {
             label: 'Casos Totales',
-            backgroundColor: '#f87979',
+            backgroundColor: '#f8797999',
             borderColor: '#f87979',
             fill: true,
             data: this.historico.cantidadDeCasosPorDia
@@ -68,7 +81,9 @@ export default {
 
 <style>
 .small {
-  max-width: 700px;
+  position:relative;
+  max-width: 100%;
+  height: 550px;
   margin: 0 auto;
 }
 </style>

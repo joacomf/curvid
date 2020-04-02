@@ -1,5 +1,8 @@
 <template>
-  <GraficoHistorico/>
+  <div>
+    <GraficoHistorico pais="Argentina"/>
+    <GraficoHistorico pais="Spain"/>
+  </div>
 </template>
 
 <script>
