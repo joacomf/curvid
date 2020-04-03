@@ -1,5 +1,5 @@
 <template>
-  <div class="small">
+  <div class="grafico">
     <h1>{{pais}}</h1>
     <cargando v-if="cargando"/>
     <line-chart :chart-data="datacollection" :options="options"></line-chart>
@@ -78,10 +78,8 @@ export default {
 </script>
 
 <style>
-.small {
+.grafico {
   position:relative;
-  max-width: 100%;
-  height: 550px;
   margin: 0 auto;
 }
 </style>
