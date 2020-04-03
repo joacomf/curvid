@@ -1,6 +1,6 @@
 <template>
   <div class="grafico">
-    <h1>{{pais}}</h1>
+    <h3>{{pais}}</h3>
     <cargando v-if="cargando"/>
     <line-chart :chart-data="datacollection" :options="options"></line-chart>
   </div>
@@ -58,15 +58,15 @@ export default {
           },
           {
             label: 'Casos Activos',
-            backgroundColor: '#cc797999',
-            borderColor: '#cc7979',
+            backgroundColor: '#df786199',
+            borderColor: '#df7861',
             fill: true,
             data: this.historico.cantidadDeDiferenciaRecuperados
           },
           {
             label: 'Casos Totales',
-            backgroundColor: '#f8797999',
-            borderColor: '#f87979',
+            backgroundColor: '#ecb39099',
+            borderColor: '#ecb390',
             fill: true,
             data: this.historico.cantidadDeCasosPorDia
           }
