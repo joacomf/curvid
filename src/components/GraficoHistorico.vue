@@ -21,11 +21,11 @@ export default {
   data () {
     return {
       datacollection: {},
-      pais: '',
       options: {
         maintainAspectRatio: false,
         responsive: true
       },
+      pais: '',
       historico: null,
       cargando: true
     }
