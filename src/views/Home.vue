@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <GraficoHistorico pais="Argentina"/>
     <GraficoHistorico pais="Spain"/>
   </div>
