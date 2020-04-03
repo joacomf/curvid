@@ -13,7 +13,6 @@ export default {
   pais: 'Argentina',
 
   obtenerDatos (pais) {
-    console.log(axios);
     return axios.get(this.url + pais).then(historico => {
       const lineaDeTiempo = historico.data.timeline
 

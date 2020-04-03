@@ -25,7 +25,6 @@ export default {
         maintainAspectRatio: false,
         responsive: true
       },
-      pais: '',
       historico: null,
       cargando: true
     }
@@ -40,7 +39,6 @@ export default {
   },
   methods: {
     fillData () {
-      console.log(this.historico.cantidadDeMuertesPorDia);
       this.datacollection = {
         labels: this.historico.diasDeLosCasos,
         datasets: [
