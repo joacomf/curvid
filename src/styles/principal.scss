@@ -1,7 +1,39 @@
+$color-primario: #df7861;
+$color-secundario: #ecb390;
+$color-contraste: #ecdfc8;
+$color-claro: #fcf8e8;
+$color-oscuro: #2c3e50;
+
+body {
+    background-color: $color-claro
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: $color-oscuro;
+
+    h1, h2, h3 {
+        font-weight: 100;
+    }
+
+    .navbar {
+        background-color: #fff;
+    }
+
+    .navbar-light .navbar-brand {
+        color: $color-oscuro;
+
+        img{
+            height: 30px;
+            width: auto;
+            margin-right: 5px
+        }
+    }
+
+    .router-container {
+        margin-top: 40px
+    }
 }
