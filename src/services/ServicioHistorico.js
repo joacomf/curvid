@@ -7,7 +7,7 @@ export default {
   cantidadDeRecuperadosPorDia: [],
   cantidadDeDiferenciaRecuperados: [],
 
-  diaInicial: 0,
+  diaInicial: 43,
 
   url: 'https://corona.lmao.ninja/v2/historical/',
   pais: 'Argentina',

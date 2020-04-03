@@ -77,9 +77,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .grafico {
   position:relative;
   margin: 0 auto;
+  margin-top: 30px;
+
+  background-color: #fff;
+  padding: 30px
 }
 </style>

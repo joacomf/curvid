@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <GraficoHistorico pais="Argentina"/>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <GraficoHistorico pais="Spain"/>
       </div>
     </div>
