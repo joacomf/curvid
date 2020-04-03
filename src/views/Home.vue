@@ -1,7 +1,13 @@
 <template>
   <div class="container">
-    <GraficoHistorico pais="Argentina"/>
-    <GraficoHistorico pais="Spain"/>
+    <div class="row">
+      <div class="col-md-6">
+        <GraficoHistorico pais="Argentina"/>
+      </div>
+      <div class="col-md-6">
+        <GraficoHistorico pais="Spain"/>
+      </div>
+    </div>
   </div>
 </template>
 
