@@ -7,7 +7,7 @@ export default {
   cantidadDeRecuperadosPorDia: [],
   cantidadDeDiferenciaRecuperados: [],
 
-  diaInicial: 43,
+  diaInicial: 0,
 
   url: 'https://corona.lmao.ninja/v2/historical/',
   pais: 'Argentina',
@@ -27,10 +27,9 @@ export default {
 
       this.calcularDiferencial()
       this.calcularExponencial()
+    }).catch(error => {
+      console.log(error)
     })
-      .catch(error => {
-        console.log(error)
-      })
   },
 
   calcularDiferencial () {
