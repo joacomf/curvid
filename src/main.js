@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './styles/principal.scss'
 
-
+Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 

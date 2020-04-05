@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 
 export default {
   diasDeLosCasos: [],
@@ -20,7 +21,7 @@ export default {
       const muertesTotalesPorDia = lineaDeTiempo.deaths
       const recuperadosTotalesPorDia = lineaDeTiempo.recovered
 
-      this.diasDeLosCasos = Object.keys(casosTotalesPorDia).slice(this.diaInicial)
+      this.extraerDias(casosTotalesPorDia);
       this.cantidadDeCasosPorDia = Object.values(casosTotalesPorDia).slice(this.diaInicial)
       this.cantidadDeMuertesPorDia = Object.values(muertesTotalesPorDia).slice(this.diaInicial)
       this.cantidadDeRecuperadosPorDia = Object.values(recuperadosTotalesPorDia).slice(this.diaInicial)
@@ -30,6 +31,16 @@ export default {
     }).catch(error => {
       console.log(error)
     })
+  },
+
+  extraerDias (mapaDeCasos) {
+    let fechas = Object.keys(mapaDeCasos).slice(this.diaInicial);
+    
+    fechas.map((fecha, i) => {
+      fechas[i] = moment(fecha, "MM-DD-YY").format("DD/MM")
+    });
+
+    this.diasDeLosCasos = fechas;
   },
 
   calcularDiferencial () {
